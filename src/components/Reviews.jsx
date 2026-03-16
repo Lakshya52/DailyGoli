@@ -96,12 +96,12 @@ const Reviews = () => {
         {/* arrows */}
         <div className="flex gap-3 self-end ">
 
-          <div className="h-10 w-10 rounded-full bg-(--bg-light) flex items-center justify-center cursor-pointer hover:bg-(--color-primary) hover:text-(--white) transition-all duration-300">
-            <ArrowLeft size={18}/>
+          <div className="h-10 w-10 rounded-full bg-(--bg-light) flex items-center justify-center cursor-pointer hover:bg-(--color-primary) text-(--color-primary) hover:text-(--white) transition-all duration-300">
+            <ArrowLeft size={18} className='' />
           </div>
 
-          <div className="h-10 w-10 rounded-full bg-(--bg-light) flex items-center justify-center cursor-pointer hover:bg-(--color-primary) hover:text-(--white) transition-all duration-300">
-            <ArrowRight size={18}/>
+          <div className="h-10 w-10 rounded-full bg-(--bg-light) flex items-center justify-center cursor-pointer hover:bg-(--color-primary) text-(--color-primary) hover:text-(--white) transition-all duration-300">
+            <ArrowRight size={18} className='' />
           </div>
 
         </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {Star, ShoppingCart, Check, CheckCheck } from "lucide-react"
 
+
 const Product = () => {
   const [selectedPurchase, setSelectedPurchase] = useState('monthly');
   const [selectedImage, setSelectedImage] = useState(0);
@@ -51,15 +52,18 @@ const Product = () => {
         </div>
 
         {/* product purchasing section */}
-        <div className="w-[70%] mt-15 flex gap-12 items-start justify-between">
+        <div className="w-[70%] mt-15 flex gap-12 items-start justify-between relative">
           
           {/* Image Gallery - Left Side */}
-          <div className="w-1/2 flex flex-col gap-4">
+          <div className="w-1/2 min-w-[50%]">
+  <div className="sticky top-[10vh] flex flex-col gap-4 will-change-transform">
             {/* Main Image */}
             <div className="w-full aspect-square bg-(--bg-light) rounded-2xl overflow-hidden flex items-center justify-center border-2 border-(--color-primary)">
               <img 
                 src={productImages[selectedImage]} 
                 alt="Product" 
+                loading="eager"
+  decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -85,9 +89,10 @@ const Product = () => {
               ))}
             </div>
           </div>
+          </div>
 
           {/* Product Details - Right Side */}
-          <div className="w-1/2 flex flex-col gap-6">
+          <div className="w-1/2 flex flex-col gap-4">
             
             {/* Product Title */}
             <div>
@@ -163,17 +168,7 @@ const Product = () => {
               </p>
             </div>
 
-            {/* Benefits */}
-            <div className="flex flex-wrap gap-3">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center gap-2 text-(--color-primary)">
-                  <div className="w-5 h-5 rounded-full bg-(--color-primary) flex items-center justify-center">
-                    <Check size={14} className="text-(--white)" />
-                  </div>
-                  <span className="text-sm font-lex-reg">{benefit}</span>
-                </div>
-              ))}
-            </div>
+            
 
 
 <div className="flex gap-4">
@@ -190,6 +185,17 @@ const Product = () => {
               Buy Now
             </button>
 </div>
+{/* Benefits */}
+            <div className="flex flex-wrap gap-3">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-center gap-2 text-(--color-primary)">
+                  <div className="w-5 h-5 rounded-full bg-(--color-primary) flex items-center justify-center">
+                    <Check size={14} className="text-(--white)" />
+                  </div>
+                  <span className="text-sm font-lex-reg">{benefit}</span>
+                </div>
+              ))}
+            </div>
 
             {/* Product Features */}
             <div className="bg-(--bg-light) rounded-2xl space-y-3">
@@ -228,7 +234,96 @@ const Product = () => {
         </div>
         
         {/* us vs them section */}
-        <div className="w-[70%] mt-15 flex flex-col gap-4"></div>
+        <div className="w-[70%] mt-20 flex flex-col gap-8">
+          
+          {/* Section Header */}
+          <div className="flex flex-col items-center justify-center gap-3">
+            <h2 className="text-5xl font-lex-reg text-(--color-primary) text-center leading-14">
+              Same price. Double the capsules. <br /> More ingredients. The choice is clear.
+            </h2>
+          </div>
+
+          {/* Comparison Table */}
+          <div className="overflow-x-auto rounded-2xl border border-(--bg-light)">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="bg-(--bg-light)">
+                  <th className="p-6 text-left text-(--color-primary) font-lex-reg text-lg border-b border-(--bg-light)"></th>
+                  <th className=" bg-(--color-primary) text-(--accent) p-6 text-left  font-lex-reg text-lg border-b border-(--bg-light) rounded-tr-2xl rounded-tl-2xl">✦ Daily Goli MB-360</th>
+                  <th className="p-6 text-left text-(--color-primary) font-lex-reg text-lg border-b border-l border-(--bg-light)">Other GLP-1 Brands</th>
+                  <th className="p-6 text-left text-(--color-primary) font-lex-reg text-lg border-b border-l border-(--bg-light)">Generic Supplements</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-(--bg-light) hover:bg-(--bg-light) transition-colors">
+                  <td className="p-6 text-(--color-primary) font-lex-reg">
+                    <span className="font-semibold">Price</span>
+                  </td>
+                  <td className="p-6 bg-(--color-primary) text-(--accent) font-lex-reg border-l border-(--bg-light)">₹1,499</td>
+                  <td className="p-6 text-(--color-primary) font-lex-reg border-l border-(--bg-light)">₹1,499</td>
+                  <td className="p-6 text-(--color-primary) font-lex-reg border-l border-(--bg-light)">₹999–₹1,299</td>
+                </tr>
+                <tr className="border-b border-(--bg-light) hover:bg-(--bg-light) transition-colors">
+                  <td className="p-6 text-(--color-primary) font-lex-reg">
+                    <span className="font-semibold">Capsules</span>
+                  </td>
+                  <td className="p-6 bg-(--color-primary) text-(--accent) font-lex-reg border-l border-(--bg-light)">60 Capsules</td>
+                  <td className="p-6 text-(--color-primary) font-lex-reg border-l border-(--bg-light)">30 Capsules</td>
+                  <td className="p-6 text-(--color-primary) font-lex-reg border-l border-(--bg-light)">30–60 Capsules</td>
+                </tr>
+                <tr className="border-b border-(--bg-light) hover:bg-(--bg-light) transition-colors">
+                  <td className="p-6 text-(--color-primary) font-lex-reg">
+                    <span className="font-semibold">Value/Day</span>
+                  </td>
+                  <td className="p-6 bg-(--color-primary) text-(--accent) font-lex-reg border-l border-(--bg-light) ">₹50/day</td>
+                  <td className="p-6 text-(--color-primary) font-lex-reg border-l border-(--bg-light)">₹100/day</td>
+                  <td className="p-6 text-(--color-primary) font-lex-reg border-l border-(--bg-light)">₹33–₹100</td>
+                </tr>
+                <tr className="border-b border-(--bg-light) hover:bg-(--bg-light) transition-colors">
+                  <td className="p-6 text-(--color-primary) font-lex-reg">
+                    <span className="font-semibold">Berberine HCl</span>
+                  </td>
+                  <td className="p-6 bg-(--color-primary) text-(--accent) font-lex-reg border-l border-(--bg-light) ">✓ 296mg</td>
+                  <td className="p-6 text-(--color-primary) font-lex-reg border-l border-(--bg-light)">✗ Not Present</td>
+                  <td className="p-6 text-(--color-primary) font-lex-reg border-l border-(--bg-light)">✗ Usually Not</td>
+                </tr>
+                <tr className="border-b border-(--bg-light) hover:bg-(--bg-light) transition-colors">
+                  <td className="p-6 text-(--color-primary) font-lex-reg">
+                    <span className="font-semibold">CQR-300</span>
+                  </td>
+                  <td className="p-6 bg-(--color-primary) text-(--accent) font-lex-reg border-l border-(--bg-light) ">✓ 296mg</td>
+                  <td className="p-6 text-(--color-primary) font-lex-reg border-l border-(--bg-light)">✓ Present</td>
+                  <td className="p-6 text-(--color-primary) font-lex-reg border-l border-(--bg-light)">✗ Rarely</td>
+                </tr>
+                <tr className="border-b border-(--bg-light) hover:bg-(--bg-light) transition-colors">
+                  <td className="p-6 text-(--color-primary) font-lex-reg">
+                    <span className="font-semibold">Inulin Prebiotic</span>
+                  </td>
+                  <td className="p-6 bg-(--color-primary) text-(--accent) font-lex-reg border-l border-(--bg-light) ">✓ 112mg</td>
+                  <td className="p-6 text-(--color-primary) font-lex-reg border-l border-(--bg-light)">✗ Not Present</td>
+                  <td className="p-6 text-(--color-primary) font-lex-reg border-l border-(--bg-light)">✗ Rarely</td>
+                </tr>
+                <tr className="border-b border-(--bg-light) hover:bg-(--bg-light) transition-colors">
+                  <td className="p-6 text-(--color-primary) font-lex-reg">
+                    <span className="font-semibold">Total Ingredients</span>
+                  </td>
+                  <td className="p-6 bg-(--color-primary) text-(--accent) font-lex-reg border-l border-(--bg-light) ">6 Active</td>
+                  <td className="p-6 text-(--color-primary) font-lex-reg border-l border-(--bg-light)">4 Ingredients</td>
+                  <td className="p-6 text-(--color-primary) font-lex-reg border-l border-(--bg-light)">2–3 Ingredients</td>
+                </tr>
+                <tr className="hover:bg-(--bg-light) transition-colors">
+                  <td className="p-6 text-(--color-primary) font-lex-reg">
+                    <span className="font-semibold">WHO-GMP Certified</span>
+                  </td>
+                  <td className="p-6 bg-(--color-primary) text-(--accent) font-lex-reg border-l border-(--bg-light)  rounded-br-2xl rounded-bl-2xl">✓ Yes</td>
+                  <td className="p-6 text-(--color-primary) font-lex-reg border-l border-(--bg-light)">Unspecified</td>
+                  <td className="p-6 text-(--color-primary) font-lex-reg border-l border-(--bg-light)">Varies</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
       </div>
     </>
   );

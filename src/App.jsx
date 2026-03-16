@@ -1,24 +1,28 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-// common imports
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
-
-// pages import
 import Landing from "./pages/Landing"
 
 const App = () => {
   return (
-    <>
-      <Router>
+    <Router>
+      <div className="w-full min-h-screen flex flex-col">
+        
+        {/* ⚠️ IMPORTANT: Navbar should NOT be inside any overflow/transform */}
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Landing />} />
-        </Routes>
+
+        {/* MAIN CONTENT */}
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Landing />} />
+          </Routes>
+        </main>
+
         <Footer />
-      </Router>
-    </>
+      </div>
+    </Router>
   )
 }
 
