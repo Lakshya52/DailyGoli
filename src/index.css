@@ -1,0 +1,73 @@
+/* lex font 200 */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@200&display=swap'); 
+/* lex font 400 */
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+/* lex font 700 */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@700&display=swap');
+
+/* tailwind import */
+@import "tailwindcss";
+
+
+
+:root {
+  --color-primary: #0b602b;
+  --bg-light: #e0f3d1;
+  --text: var(--color-primary);
+  --accent: #fed054;
+  --white: #ffffff;
+}
+
+body {
+  font-optical-sizing: auto;
+  /* padding-left: 100px; */
+  /* padding-right: 100px; */
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar{
+        height: 0px;
+}
+
+/* fonts import */
+/* font weight light 200 */
+.font-lex-light {
+  font-family: "Lexend", sans-serif;
+  font-weight: 200;
+}
+
+/* font weight regular 400 */
+.font-lex-reg {
+  font-family: "Lexend", sans-serif;
+  font-weight: 400;
+}
+
+/* font weight medium 700 */
+.font-lex-med {
+  font-family: "Lexend", sans-serif;
+  font-weight: 700;
+}
+
+/* icon used in the whole project */
+  /* instagram 
+          <Instagram /> */
+  /* linkedin 
+          <Linkedin /> */
+  /* twitter 
+          <Twitter /> */
+  /* arrow Up right 
+          <ArrowUpRight />  */
+  /* arrow left 
+          <ArrowLeft /> */
+  /* arrow right 
+          <ArrowRight /> */
+  /* gemini star */ /* will use as a text*/
+
+  /* reviews star full 
+          <Star /> */
+  /* reviews star half filled 
+          <StarHalf /> */
+  /* plus 
+          <Plus /> */
+  /* minus 
+          <Minus /> */
